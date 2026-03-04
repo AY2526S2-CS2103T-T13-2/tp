@@ -9,34 +9,26 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 ## Project team
 
-### John Doe
+### Fong Jing Xiang
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/fjxfong.png" width="200px">
 
-[[homepage](http://www.comp.nus.edu.sg/~damithch)]
-[[github](https://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[homepage](https://ay2526s2-cs2103t-t13-2.github.io/tp/)]
+[[github](https://github.com/fjxfong)]
+[[portfolio](team/fjxfong.md)]
 
-* Role: Project Advisor
+* Role: Developer
+* Responsibilities: Logic
 
-### Jane Doe
+### Kairav Shaurya Makhija
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/kairav828.png" width="200px">
 
-[[github](http://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[github](http://github.com/Kairav828)]
+[[portfolio](team/Kairav828.md)]
 
 * Role: Team Lead
 * Responsibilities: UI
-
-### Johnny Doe
-
-<img src="images/johndoe.png" width="200px">
-
-[[github](http://github.com/johndoe)] [[portfolio](team/johndoe.md)]
-
-* Role: Developer
-* Responsibilities: Data
 
 ### Ong Jun Kai Clemen
 
@@ -44,6 +36,12 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 [[github](http://github.com/clemenong1)]
 [[portfolio](team/clemen.md)]
+### Lim Zi Shen
+
+<img src="images/limzishen.png" width="200px">
+
+[[github](https://github.com/limzishen)]
+[[portfolio](team/zishen.md)]
 
 * Role: Developer
 * Responsibilities: Dev Ops + Threading
