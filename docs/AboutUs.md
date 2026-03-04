@@ -9,15 +9,16 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 ## Project team
 
-### John Doe
+### Fong Jing Xiang
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/fjxfong.png" width="200px">
 
-[[homepage](http://www.comp.nus.edu.sg/~damithch)]
-[[github](https://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[homepage](https://ay2526s2-cs2103t-t13-2.github.io/tp/)]
+[[github](https://github.com/fjxfong)]
+[[portfolio](team/fjxfong.md)]
 
-* Role: Project Advisor
+* Role: Developer
+* Responsibilities: Logic
 
 ### Jane Doe
 
