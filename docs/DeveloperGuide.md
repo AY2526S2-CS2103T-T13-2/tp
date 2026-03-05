@@ -392,16 +392,122 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Non-Functional Requirements
 
-1.  Should work on any _mainstream OS_ as long as it has Java `17` or above installed.
-2.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
-3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+**Performance**
+1.  All commands (`add`, `delete`, `find`, `mark`) should return a response within 1 second when the dataset contains up to 200 students.
+2.  The application should launch and load stored data within 2 seconds for datasets up to 200 students.
 
-*{More to be added}*
+---
+
+**Usability**
+1.  The system must be fully operable using keyboard-only commands without requiring mouse interaction.
+2.  All commands must follow a consistent prefix format (e.g., `n/`, `i/`, `e/`, `t/`) to ensure predictable command usage.
+3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+4.  When a command fails, the system must provide clear and informative error messages explaining the issue and the correct command format.
+
+---
+
+**Reliability**
+
+1.  All modifications to student data (`add`, `delete`, `mark`, `clear`) must be automatically saved immediately after execution.
+2.  On application startup, the system must automatically load previously saved data if the storage file exists and is valid.
+3.  If the storage file is corrupted, the system must display an error message and prevent overwriting the corrupted file.
+4.  The system should not lose more than 1 command's worth of changes in the event of an unexpected application crash.
+5.  The system should gracefully handle invalid input commands without crashing.
+
+---
+
+**Scalability**
+1. The system must support at least 200 students across multiple tutorial groups still meeting the defined performance requirements.
+2. The system should maintain command response times within 1 second as the number of stored students increases up to the supported limit.
+3. The system should allow new tutorial groups to be added without requiring changes to the system configuration or code.
+4. The system should allow the dataset to grow across multiple tutorial groups without affecting the accuracy of search or attendance operations.
+5. The storage format should support efficient reading and writing even as the number of stored student records increases.
+6. The system should be able to load and display large student lists without causing the interface to freeze or become unresponsive.
+7. The system architecture should allow future expansion to support additional student attributes without significant redesign of the storage structure.
+
+---
+
+**Compatibility**
+1.  The application should run on any mainstream OS.
+2.  The application should run on systems with Java 17 or above installed**.
+
+---
+
+**Storage**
+1.  All student data must be stored locally on the user's machine in a structured format such as **JSON**.
+
+---
+
+**System Constraints**
+1.  The system is designed for single-user operation only and does not support concurrent multi-user access.
+2.  The application should function fully without requiring an internet connection.
+
+---
+
+**Security**
+1.  Student data should remain stored locally and not be transmitted externally.
+2.  The application must not transmit any student data to external servers.
+
+---
+
+**Quality**
+1. The system should be usable by a teaching assistant who has no prior experience with command line applications after reading the user guide once.
+2. A new user should be able to successfully add a student and mark attendance within 5 minutes of first launching the application.
+3. The system should allow a user to complete common tasks such as finding a student or marking attendance with no more than one command.
 
 ### Glossary
 
-* **Mainstream OS**: Windows, Linux, Unix, MacOS
-* **Private contact detail**: A contact detail that is not meant to be shared with others
+* Application data directory: The folder on the user’s computer where CLI-Tacts stores its data file and preferences.
+
+* Command: A text instruction typed by the user into the command box to perform an action (e.g., add, delete, find, mark).
+
+* Command prefix: A token that identifies the value of a field in a command (e.g., n/ for name, i/ for student id, e/ for email, t/ for tutorial group).
+
+* Command result: The message returned by the system after executing a command, indicating success or failure.
+
+* Core features: The main functions needed for typical use in tutorials, including add, delete, find, mark, loading, and saving.
+
+* Dataset: The complete set of student records stored by the application at a given time.
+
+* Duplicate student id: A student id that matches an existing student id already stored in the application.
+
+* Error message: A message displayed to inform the user that a command failed and to explain the reason for the failure.
+
+* Filtered list: A temporary view of the student list that shows only students matching certain criteria (e.g., search results or a tutorial group filter).
+
+* Frozen or unresponsive: A state where the user interface does not update and does not accept new input for more than 1 second.
+
+* Invalid command format: A command that does not match the required structure or is missing required prefixes or parameters.
+
+* Java runtime: The software environment required to run the application, specifically Java version 17 or above.
+
+* Mainstream OS: Windows, macOS, or Linux operating systems.
+
+* Modifying command: Any command that changes stored data (e.g., add, delete, mark, clear).
+
+* Offline: The application can be used without an internet connection and without relying on any online services.
+
+* Performance requirements: The response time and startup time targets defined in the non-functional requirements.
+
+* Response time: The time between when a user enters a command and when the application displays the resulting output and updates the interface.
+
+* Single-user operation: A usage model where the application is intended to be used by one user on one machine without concurrent access from multiple users.
+
+* Storage file: The local file used to store student records so that data persists between application sessions.
+
+* Structured format: A machine-readable data format with defined fields and structure, such as JSON.
+
+* Student record: A stored entry representing one student's details and attendance information.
+
+* Student id: The unique identifier for a student (e.g., A0123456X) used as the primary key for identifying a student in the application.
+
+* Tutorial group: A label used to group students by tutorial or lab session (e.g., T12) for filtering and attendance marking.
+
+* Typical usage: Normal operation during a semester for a teaching assistant managing up to 200 students across multiple tutorial groups.
+
+* User guide: The documentation that explains how to use the application's commands and features.
+
+* Validation: The process of checking user input to ensure it matches the required format before executing a command.
 
 --------------------------------------------------------------------------------------------------------------------
 
