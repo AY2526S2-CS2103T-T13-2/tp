@@ -47,10 +47,10 @@ public class PersonBuilder {
      */
     public PersonBuilder(Person personToCopy) {
         name = personToCopy.getName();
-        phone = personToCopy.getPhone();
-        email = personToCopy.getEmail();
-        teleHandle = personToCopy.getTeleHandle();
         studentId = personToCopy.getStudentId();
+        email = personToCopy.getEmail();
+        phone = personToCopy.getPhone();
+        teleHandle = personToCopy.getTeleHandle();
         tags = new HashSet<>(personToCopy.getTags());
     }
 

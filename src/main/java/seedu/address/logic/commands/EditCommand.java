@@ -42,15 +42,17 @@ public class EditCommand extends Command {
             + "Existing values will be overwritten by the input values.\n"
             + "Parameters: INDEX (must be a positive integer) "
             + "[" + PREFIX_NAME + "NAME] "
-            + "[" + PREFIX_PHONE + "PHONE] "
-            + "[" + PREFIX_EMAIL + "EMAIL] "
-            + "[" + PREFIX_TELE_HANDLE + "TELE_HANDLE] "
             + "[" + PREFIX_STUDENT_ID + "STUDENT_ID] "
+            + "[" + PREFIX_EMAIL + "EMAIL] "
+            + "[" + PREFIX_PHONE + "PHONE] "
+            + "[" + PREFIX_TELE_HANDLE + "TELE_HANDLE] "
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " 1 "
-            + PREFIX_PHONE + "91234567 "
+            + PREFIX_NAME + "John Doe "
+            + PREFIX_STUDENT_ID + "A0123456X "
             + PREFIX_EMAIL + "johndoe@example.com "
-            + PREFIX_STUDENT_ID + "A0123456X";
+            + PREFIX_PHONE + "91234567 "
+            + PREFIX_TELE_HANDLE + "@john_doe";
 
     public static final String MESSAGE_EDIT_PERSON_SUCCESS = "Edited Person: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
@@ -153,10 +155,10 @@ public class EditCommand extends Command {
          */
         public EditPersonDescriptor(EditPersonDescriptor toCopy) {
             setName(toCopy.name);
-            setPhone(toCopy.phone);
-            setEmail(toCopy.email);
-            setTeleHandle(toCopy.teleHandle);
             setStudentId(toCopy.studentId);
+            setEmail(toCopy.email);
+            setPhone(toCopy.phone);
+            setTeleHandle(toCopy.teleHandle);
             setTags(toCopy.tags);
         }
 
@@ -248,10 +250,10 @@ public class EditCommand extends Command {
         public String toString() {
             return new ToStringBuilder(this)
                     .add("name", name)
-                    .add("phone", phone)
-                    .add("email", email)
-                    .add("teleHandle", teleHandle)
                     .add("studentId", studentId)
+                    .add("email", email)
+                    .add("phone", phone)
+                    .add("teleHandle", teleHandle)
                     .add("tags", tags)
                     .toString();
         }

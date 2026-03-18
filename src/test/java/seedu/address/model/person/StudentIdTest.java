@@ -20,9 +20,7 @@ public class StudentIdTest {
         Assert.assertThrows(IllegalArgumentException.class, () -> new StudentId(""));
         Assert.assertThrows(IllegalArgumentException.class, () -> new StudentId("invalid"));
         Assert.assertThrows(IllegalArgumentException.class, () -> new StudentId("A123")); // too short
-        Assert.assertThrows(IllegalArgumentException.class, () -> new StudentId("A01234567")); // 8 chars
-        Assert.assertThrows(IllegalArgumentException.class, () -> new StudentId("10123456X")); // starts with digit
-        Assert.assertThrows(IllegalArgumentException.class, () -> new StudentId("A0123456")); // missing last letter
+        Assert.assertThrows(IllegalArgumentException.class, () -> new StudentId("A0123456")); // 8 chars
     }
 
     @Test
@@ -34,12 +32,11 @@ public class StudentIdTest {
         assertFalse(StudentId.isValidStudentId("")); // empty
         assertFalse(StudentId.isValidStudentId("invalid")); // wrong format
         assertFalse(StudentId.isValidStudentId("A123")); // too short
-        assertFalse(StudentId.isValidStudentId("A01234567")); // 8 chars
-        assertFalse(StudentId.isValidStudentId("10123456X")); // starts with digit
-        assertFalse(StudentId.isValidStudentId("A0123456")); // missing last letter
+        assertFalse(StudentId.isValidStudentId("A0123456")); // 8 chars
 
-        // valid
+        // valid (9 alphanumeric chars)
         assertTrue(StudentId.isValidStudentId("A0123456X"));
+        assertTrue(StudentId.isValidStudentId("10123456X")); // digits allowed
         assertTrue(StudentId.isValidStudentId("a0123456x")); // lowercase
         assertTrue(StudentId.isValidStudentId("B1234567Y"));
         assertTrue(StudentId.isValidStudentId("Z9999999A"));

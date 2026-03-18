@@ -6,27 +6,33 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 /**
  * Represents a Person's student ID in the address book.
  * Guarantees: immutable; is valid as declared in {@link #isValidStudentId(String)}.
- * Format: 9 characters - 1 letter, 7 digits, 1 letter (e.g. A0123456X). Case-insensitive.
+ * Format: Exactly 9 alphanumeric characters. Case-insensitive.
  */
 public class StudentId {
 
     public static final String MESSAGE_CONSTRAINTS =
-            "Student ID should be 9 characters: 1 letter, 7 digits, 1 letter (e.g. A0123456X).";
+            "Invalid Student ID! Student ID should only contain 9 alphanumeric characters.";
+    public static final String MESSAGE_CONSTRAINTS_LENGTH =
+            "Invalid Student ID! Student ID should only contain 9 characters.";
+    public static final String MESSAGE_CONSTRAINTS_ALPHANUMERIC =
+            "Invalid Student ID! Student ID should only contain alphanumeric characters.";
 
-    // NUS-style: letter + 7 digits + letter
-    public static final String VALIDATION_REGEX = "^[A-Za-z][0-9]{7}[A-Za-z]$";
+    // Exactly 9 alphanumeric characters
+    public static final String VALIDATION_REGEX = "^[A-Za-z0-9]{9}$";
 
     public final String value;
 
     /**
      * Constructs a {@code StudentId}.
+     * Leading/trailing spaces are trimmed. Multiple internal spaces are collapsed to one.
+     * Value is normalized to uppercase.
      *
      * @param studentId A valid student ID.
      */
     public StudentId(String studentId) {
         requireNonNull(studentId);
-        String normalized = studentId.trim().toUpperCase();
-        checkArgument(isValidStudentId(normalized), MESSAGE_CONSTRAINTS);
+        String normalized = studentId.trim().replaceAll("\\s+", " ").replace(" ", "").toUpperCase();
+        checkArgument(isValidStudentId(normalized), getConstraintMessage(normalized));
         value = normalized;
     }
 
@@ -34,7 +40,20 @@ public class StudentId {
      * Returns true if a given string is a valid student ID.
      */
     public static boolean isValidStudentId(String test) {
-        return test != null && test.matches(VALIDATION_REGEX);
+        if (test == null) {
+            return false;
+        }
+        if (test.length() != 9) {
+            return false;
+        }
+        return test.matches("^[A-Za-z0-9]+$");
+    }
+
+    private static String getConstraintMessage(String test) {
+        if (test.length() != 9) {
+            return MESSAGE_CONSTRAINTS_LENGTH;
+        }
+        return MESSAGE_CONSTRAINTS_ALPHANUMERIC;
     }
 
     @Override

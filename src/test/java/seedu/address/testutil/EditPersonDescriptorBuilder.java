@@ -34,10 +34,10 @@ public class EditPersonDescriptorBuilder {
     public EditPersonDescriptorBuilder(Person person) {
         descriptor = new EditPersonDescriptor();
         descriptor.setName(person.getName());
-        descriptor.setPhone(person.getPhone());
-        descriptor.setEmail(person.getEmail());
-        descriptor.setTeleHandle(person.getTeleHandle());
         descriptor.setStudentId(person.getStudentId());
+        descriptor.setEmail(person.getEmail());
+        descriptor.setPhone(person.getPhone());
+        descriptor.setTeleHandle(person.getTeleHandle());
         descriptor.setTags(person.getTags());
     }
 

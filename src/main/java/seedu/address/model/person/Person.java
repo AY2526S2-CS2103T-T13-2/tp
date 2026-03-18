@@ -114,10 +114,10 @@ public class Person {
     public String toString() {
         return new ToStringBuilder(this)
                 .add("name", name)
-                .add("phone", phone)
-                .add("email", email)
-                .add("teleHandle", teleHandle)
                 .add("studentId", studentId)
+                .add("email", email)
+                .add("phone", phone)
+                .add("teleHandle", teleHandle)
                 .add("tags", tags)
                 .toString();
     }

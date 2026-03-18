@@ -53,10 +53,10 @@ public class PersonCard extends UiPart<Region> {
         this.person = person;
         id.setText(displayedIndex + ". ");
         name.setText(person.getName().fullName);
-        phone.setText(person.getPhone().value);
-        email.setText(person.getEmail().value);
-        teleHandle.setText(person.getTeleHandle().value);
         studentId.setText(person.getStudentId().value);
+        email.setText(person.getEmail().value);
+        phone.setText(person.getPhone().value);
+        teleHandle.setText(person.getTeleHandle().value);
         person.getTags().forEach(tag -> tutorialGroup.getChildren().add(new Label(tag.tagName)));
         attendanceTableManager = new AttendanceTable(attendanceTable);
     }
