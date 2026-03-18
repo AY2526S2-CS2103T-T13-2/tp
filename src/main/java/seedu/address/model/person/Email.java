@@ -12,12 +12,15 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 public class Email {
 
     private static final String SPECIAL_CHARACTERS = "+_.-";
-    public static final String MESSAGE_CONSTRAINTS =
-            "Emails should be of the format local-part@u.nus.edu.sg and adhere to the following constraints:\n"
-            + "1. The local-part should only contain alphanumeric characters and the special characters "
-            + "(" + SPECIAL_CHARACTERS + "), with no consecutive special characters.\n"
-            + "2. This is followed by a '@' and then a domain name (u.nus.edu.sg).";
-
+    public static final String MESSAGE_CONSTRAINTS = "Emails should be of the format local-part@u.nus.edu.sg "
+        + "and adhere to the following constraints:\n"
+        + "1. The local-part should only contain alphanumeric characters and these special characters, excluding "
+        + "the parentheses, (" + SPECIAL_CHARACTERS + ").\n"
+        + "2. Each special character must be surrounded by alphanumeric characters "
+        + "(i.e. the local-part cannot start or end with a special character, and cannot contain consecutive special "
+        + "characters).\n"
+        + "3. The domain must be exactly u.nus.edu.sg.";
+    // alphanumeric and special characters
     private static final String ALPHANUMERIC_NO_UNDERSCORE = "[^\\W_]+";
     private static final String LOCAL_PART_REGEX =
             "^" + ALPHANUMERIC_NO_UNDERSCORE + "([" + SPECIAL_CHARACTERS + "]" + ALPHANUMERIC_NO_UNDERSCORE + ")*";
