@@ -11,14 +11,10 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 public class StudentId {
 
     public static final String MESSAGE_CONSTRAINTS =
-            "Invalid Student ID! Student ID should only contain 9 alphanumeric characters.";
-    public static final String MESSAGE_CONSTRAINTS_LENGTH =
-            "Invalid Student ID! Student ID should only contain 9 characters.";
-    public static final String MESSAGE_CONSTRAINTS_ALPHANUMERIC =
-            "Invalid Student ID! Student ID should only contain alphanumeric characters.";
+            "Invalid Student ID! Student ID should start with 'A', followed by 7 digits, and end with a letter.";
 
-    // Exactly 9 alphanumeric characters
-    public static final String VALIDATION_REGEX = "^[A-Za-z0-9]{9}$";
+    // Starts with 'A', followed by 7 digits, ends with a letter
+    public static final String VALIDATION_REGEX = "^A\\d{7}[A-Za-z]$";
 
     public final String value;
 
@@ -32,7 +28,7 @@ public class StudentId {
     public StudentId(String studentId) {
         requireNonNull(studentId);
         String normalized = studentId.trim().replaceAll("\\s+", " ").replace(" ", "").toUpperCase();
-        checkArgument(isValidStudentId(normalized), getConstraintMessage(normalized));
+        checkArgument(isValidStudentId(normalized), MESSAGE_CONSTRAINTS);
         value = normalized;
     }
 
@@ -43,17 +39,7 @@ public class StudentId {
         if (test == null) {
             return false;
         }
-        if (test.length() != 9) {
-            return false;
-        }
-        return test.matches("^[A-Za-z0-9]+$");
-    }
-
-    private static String getConstraintMessage(String test) {
-        if (test.length() != 9) {
-            return MESSAGE_CONSTRAINTS_LENGTH;
-        }
-        return MESSAGE_CONSTRAINTS_ALPHANUMERIC;
+        return test.matches(VALIDATION_REGEX);
     }
 
     @Override

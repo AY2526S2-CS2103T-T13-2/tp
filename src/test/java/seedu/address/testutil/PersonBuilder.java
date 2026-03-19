@@ -19,7 +19,7 @@ public class PersonBuilder {
 
     public static final String DEFAULT_NAME = "Amy Bee";
     public static final String DEFAULT_PHONE = "85355255";
-    public static final String DEFAULT_EMAIL = "amy@u.nus.edu.sg";
+    public static final String DEFAULT_EMAIL = "amy@u.nus.edu";
     public static final String DEFAULT_TELE_HANDLE = "@amybee";
     public static final String DEFAULT_STUDENT_ID = "A0123456X";
 

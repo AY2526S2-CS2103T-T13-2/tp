@@ -20,24 +20,24 @@ import seedu.address.model.tag.Tag;
 public class SampleDataUtil {
     public static Person[] getSamplePersons() {
         return new Person[] {
-            new Person(new Name("Alex Yeoh"), new Phone("87438807"), new Email("alexyeoh@u.nus.edu.sg"),
+            new Person(new Name("Alex Yeoh"), new Phone("87438807"), new Email("alexyeoh@u.nus.edu"),
                 new TeleHandle("@alexyeoh"), new StudentId("A0123456A"),
-                getTagSet("friends")),
-            new Person(new Name("Bernice Yu"), new Phone("99272758"), new Email("berniceyu@u.nus.edu.sg"),
+                getTagSet("T01")),
+            new Person(new Name("Bernice Yu"), new Phone("99272758"), new Email("berniceyu@u.nus.edu"),
                 new TeleHandle("@berniceyu"), new StudentId("A0123456B"),
-                getTagSet("colleagues", "friends")),
-            new Person(new Name("Charlotte Oliveiro"), new Phone("93210283"), new Email("charlotte@u.nus.edu.sg"),
+                getTagSet("T02", "T01")),
+            new Person(new Name("Charlotte Oliveiro"), new Phone("93210283"), new Email("charlotte@u.nus.edu"),
                 new TeleHandle("@charlotteo"), new StudentId("A0123456C"),
-                getTagSet("neighbours")),
-            new Person(new Name("David Li"), new Phone("91031282"), new Email("lidavid@u.nus.edu.sg"),
+                getTagSet("T03")),
+            new Person(new Name("David Li"), new Phone("91031282"), new Email("lidavid@u.nus.edu"),
                 new TeleHandle("@davidli"), new StudentId("A0123456D"),
-                getTagSet("family")),
-            new Person(new Name("Irfan Ibrahim"), new Phone("92492021"), new Email("irfan@u.nus.edu.sg"),
+                getTagSet("T04")),
+            new Person(new Name("Irfan Ibrahim"), new Phone("92492021"), new Email("irfan@u.nus.edu"),
                 new TeleHandle("@irfanib"), new StudentId("A0123456E"),
-                getTagSet("classmates")),
-            new Person(new Name("Roy Balakrishnan"), new Phone("92624417"), new Email("royb@u.nus.edu.sg"),
+                getTagSet("T05")),
+            new Person(new Name("Roy Balakrishnan"), new Phone("92624417"), new Email("royb@u.nus.edu"),
                 new TeleHandle("@roybala"), new StudentId("A0123456F"),
-                getTagSet("colleagues"))
+                getTagSet("T02"))
         };
     }
 

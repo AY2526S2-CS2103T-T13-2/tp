@@ -50,7 +50,7 @@ public class EditCommand extends Command {
             + "Example: " + COMMAND_WORD + " 1 "
             + PREFIX_NAME + "John Doe "
             + PREFIX_STUDENT_ID + "A0123456X "
-            + PREFIX_EMAIL + "johndoe@example.com "
+            + PREFIX_EMAIL + "johndoe@u.nus.edu "
             + PREFIX_PHONE + "91234567 "
             + PREFIX_TELE_HANDLE + "@john_doe";
 

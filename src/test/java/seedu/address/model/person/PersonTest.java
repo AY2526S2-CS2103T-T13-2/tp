@@ -43,7 +43,7 @@ public class PersonTest {
         assertFalse(ALICE.isSamePerson(editedAlice));
 
         // different studentId, same name -> returns false
-        Person editedBob = new PersonBuilder(BOB).withStudentId("C0123456Z").build();
+        Person editedBob = new PersonBuilder(BOB).withStudentId("A0123456Z").build();
         assertFalse(BOB.isSamePerson(editedBob));
 
         // same studentId, name has trailing spaces -> returns true (studentId is identity)
