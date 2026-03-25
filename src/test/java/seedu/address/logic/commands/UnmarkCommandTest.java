@@ -118,7 +118,7 @@ public class UnmarkCommandTest {
     }
 
     @Test
-    public void execute_groupUnmark_noGroup_throwsCommandException() {
+    public void execute_groupUnmarkNoGroup_throwsCommandException() {
         TutorialGroup tutorialGroup = new TutorialGroup("T99");
         UnmarkCommand unmarkCommand = new UnmarkCommand(tutorialGroup, 1);
 
@@ -127,7 +127,7 @@ public class UnmarkCommandTest {
     }
 
     @Test
-    public void execute_groupUnmark_alreadyUnmarked_throwsCommandException() {
+    public void execute_groupUnmarkAlreadyUnmarked_throwsCommandException() {
         TutorialGroup tutorialGroup = new TutorialGroup("T01");
         UnmarkCommand unmarkCommand = new UnmarkCommand(tutorialGroup, 1);
 
