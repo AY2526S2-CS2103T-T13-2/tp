@@ -29,8 +29,8 @@ public class MarkCommand extends Command {
             + PREFIX_WEEK + "2";
 
     public static final String MESSAGE_MARK_PERSON_SUCCESS = "Marked Person: %1$s";
-    public static final String MESSAGE_ALREADY_MARKED = "This person has already been marked"
-                                + " as attended for this week.";
+    public static final String MESSAGE_ALREADY_MARKED = "%1$s has already been marked"
+                                + " as attended for week %2$s.";
 
     private final Index index;
     private final int week;
@@ -58,7 +58,7 @@ public class MarkCommand extends Command {
         Person personToMark = lastShownList.get(index.getZeroBased());
 
         if (personToMark.getAttendance().isMarked(week)) {
-            throw new CommandException(MESSAGE_ALREADY_MARKED);
+            throw new CommandException(String.format(MESSAGE_ALREADY_MARKED, personToMark.getName(), week));
         }
 
         // Create a new attendance with the week marked
