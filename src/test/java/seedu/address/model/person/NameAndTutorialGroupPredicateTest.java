@@ -22,6 +22,27 @@ public class NameAndTutorialGroupPredicateTest {
     }
 
     @Test
+    public void test_multipleNameWords_allKeywordsMustMatch() {
+        Person johnDoe = new PersonBuilder().withName("John Doe").withTutorialGroup("T01").build();
+        Person johnOng = new PersonBuilder().withName("John Ong").withTutorialGroup("T01").build();
+        NameAndTutorialGroupPredicate predicate =
+                new NameAndTutorialGroupPredicate(Arrays.asList("jo", "do"), List.of());
+
+        assertTrue(predicate.test(johnDoe));
+        assertFalse(predicate.test(johnOng));
+    }
+
+    @Test
+    public void test_singleLetterPrefix_matchesFirstLetter() {
+        Person johnDoe = new PersonBuilder().withName("John Doe").withTutorialGroup("T01").build();
+        Person maryJane = new PersonBuilder().withName("Mary Jane").withTutorialGroup("T01").build();
+        NameAndTutorialGroupPredicate predicate = new NameAndTutorialGroupPredicate(List.of("j"), List.of());
+
+        assertTrue(predicate.test(johnDoe));
+        assertTrue(predicate.test(maryJane)); // matches "Jane"
+    }
+
+    @Test
     public void test_tutorialGroup_matchesTutorialGroup() {
         Person person = new PersonBuilder().withName("Alice Pauline").withTutorialGroup("T01").build();
         NameAndTutorialGroupPredicate predicate =
