@@ -281,6 +281,25 @@ Exits the program.
 
 Format: `exit`
 
+### Attendance Statistics Panel
+
+The **Attendance Statistics Panel** is displayed at the bottom of the main window and updates automatically whenever the student list changes (e.g. after a `mark`, `unmark`, `add`, `delete`, or `find` command).
+
+#### What it shows
+
+| Column | Description |
+|--------|-------------|
+| **Tutorial Group** | The tutorial group code (e.g. `T01`). One row per group, sorted alphabetically. |
+| **W1 – W13** | The attendance rate for that tutorial group in each week, shown as a percentage of students present (e.g. `75%` means 3 out of 4 students were marked present). |
+| **Rate** | The overall attendance rate for that tutorial group across all 13 weeks combined. |
+| **Overall** (last row) | The attendance rate across **all** students and all weeks. Each week column shows the percentage of all students present that week; the Rate column shows the global average. |
+
+#### What to expect
+
+- A value of `0%` for a week means no student in that group has been marked present yet — this is the default before any `mark` command is run.
+- The panel reflects the **currently filtered list**. If you use `find` to narrow down to a subset of students, the statistics will update to reflect only those students.
+- The panel scrolls horizontally if the window is too narrow to show all 13 weeks at once.
+
 ### Saving the data
 
 CLI-Tacts data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
